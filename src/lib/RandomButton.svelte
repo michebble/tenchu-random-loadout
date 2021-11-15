@@ -18,14 +18,14 @@
 
   const pickAmount = (max) => Math.floor(Math.random() * max) + 1;
 
-  const reducer = (selectedItems, { name, limit, src }) => {
+  const reducer = (selectedItems, { name, limit }) => {
     const currentTotal = selectedItems
       .map((seclectedItem) => seclectedItem.amount)
       .reduce((a, b) => a + b, 0);
     if (currentTotal >= MAX_ITEM_COUNT) return selectedItems;
     const remaining = MAX_ITEM_COUNT - currentTotal;
     const upperLimit = Math.min(...[remaining, limit]);
-    return selectedItems.concat({ name, src, amount: pickAmount(upperLimit) });
+    return selectedItems.concat({ name, amount: pickAmount(upperLimit) });
   };
 
   const run = () => {

@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store';
+import { writable, readable } from 'svelte/store';
 
 import binding_spell_img from "../assets/binding_spell.jpeg";
 import blow_gun_img from "../assets/blow_gun.jpeg";
@@ -32,43 +32,78 @@ import super_shuriken_img from "../assets/super_shuriken.jpeg";
 import tetsubishi_img from "../assets/tetsubishi.jpeg";
 import tiger_trap_img from "../assets/tiger_trap.jpeg";
 
+export const images = readable(
+  {
+    bindingSpell: binding_spell_img,
+    blowGun: blow_gun_img,
+    caltrops: caltrops_img,
+    chameleonSpell: chameleon_spell_img,
+    colouredRice: colored_rice_img,
+    decoyWhistle: decoy_whistle_img,
+    dogBone: dog_bone_img,
+    explodingArrow: exploding_arrow_img,
+    fireSpell: fire_spell_img,
+    fireworks: fireworks_img,
+    grenade: grenade_img,
+    healingPotion: healing_potion_img,
+    invisbilitySpell: invisibility_spell_img,
+    mine: mine_img,
+    ninjaArmor: ninja_armor_img,
+    ninjaRebirth: ninja_rebirth_img,
+    poisonAntidote: poison_antidote_img,
+    poisonRice: poison_rice_img,
+    shuriken: shuriken_img,
+    smokeBomb: smoke_bomb_img,
+    stickyBomb: sticky_bomb_img,
+    stoneOfPower: stone_of_power_img,
+    strengthPotion: strength_potion_img,
+    superShuriken: super_shuriken_img,
+    tetsubishi: tetsubishi_img,
+    tigerTrap: tiger_trap_img,
+    fugaku: fugaku_img,
+    muramasa: muramasa_img,
+    dokuto: dokuto_img,
+    kasumiAndShizuku: kasumi_and_shizuku_img,
+  }
+)
+
 export const ninjaItems = writable([
-  { name: "binding spell", limit: 1, src: binding_spell_img },
-  { name: "blow gun", limit: 5, src: blow_gun_img },
-  { name: "caltrops", limit: 15, src: caltrops_img },
-  { name: "chameleon spell", limit: 3, src: chameleon_spell_img },
-  { name: "coloured rice", limit: 5, src: colored_rice_img },
-  { name: "decoy whistle", limit: 1, src: decoy_whistle_img },
-  { name: "dog bone", limit: 5, src: dog_bone_img },
-  { name: "exploding arrow", limit: 3, src: exploding_arrow_img },
-  { name: "fire spell", limit: 2, src: fire_spell_img },
-  { name: "fireworks", limit: 3, src: fireworks_img },
-  { name: "grenade", limit: 15, src: grenade_img },
-  { name: "healing potion", limit: 15, src: healing_potion_img },
-  { name: "invisbility spell", limit: 2, src: invisibility_spell_img },
-  { name: "mine", limit: 15, src: mine_img },
-  { name: "ninja armor", limit: 1, src: ninja_armor_img },
-  { name: "ninja rebirth", limit: 1, src: ninja_rebirth_img },
-  { name: "poison antidote", limit: 15, src: poison_antidote_img },
-  { name: "poison rice", limit: 15, src: poison_rice_img },
-  { name: "shuriken", limit: 15, src: shuriken_img },
-  { name: "smoke bomb", limit: 15, src: smoke_bomb_img },
-  { name: "sticky bomb", limit: 5, src: sticky_bomb_img },
-  { name: "stone of power", limit: 1, src: stone_of_power_img },
-  { name: "strength potion", limit: 15, src: strength_potion_img },
-  { name: "super shuriken", limit: 5, src: super_shuriken_img },
-  { name: "tetsubishi", limit: 5, src: tetsubishi_img },
-  { name: "tiger trap", limit: 3, src: tiger_trap_img },
+  { name: "bindingSpell", limit: 1 },
+  { name: "blowGun", limit: 5 },
+  { name: "caltrops", limit: 15 },
+  { name: "chameleonSpell", limit: 3 },
+  { name: "colouredRice", limit: 5 },
+  { name: "decoyWhistle", limit: 1 },
+  { name: "dogBone", limit: 5 },
+  { name: "explodingArrow", limit: 3 },
+  { name: "fireSpell", limit: 2 },
+  { name: "fireworks", limit: 3 },
+  { name: "grenade", limit: 15 },
+  { name: "healingPotion", limit: 15 },
+  { name: "invisbilitySpell", limit: 2 },
+  { name: "mine", limit: 15 },
+  { name: "ninjaArmor", limit: 1 },
+  { name: "ninjaRebirth", limit: 1 },
+  { name: "poisonAntidote", limit: 15 },
+  { name: "poisonRice", limit: 15 },
+  { name: "shuriken", limit: 15 },
+  { name: "smokeBomb", limit: 15 },
+  { name: "stickyBomb", limit: 5 },
+  { name: "stoneOfPower", limit: 1 },
+  { name: "strengthPotion", limit: 15 },
+  { name: "superShuriken", limit: 5 },
+  { name: "tetsubishi", limit: 5 },
+  { name: "tigerTrap", limit: 3 },
 ]);
 
 export const rikiWeapons = writable([
-  { name: "fugaku", limit: 1, src: fugaku_img },
-  { name: "muramasa", limit: 1, src: muramasa_img },
+  { name: "fugaku", limit: 1 },
+  { name: "muramasa", limit: 1 },
 ]);
 
 export const ayameWeapons = writable([
-  { name: "dokuto", limit: 1, src: dokuto_img },
-  { name: "kasumi and shizuku", limit: 1, src: kasumi_and_shizuku_img },
+  { name: "dokuto", limit: 1 },
+  { name: "kasumiAndShizuku", limit: 1 },
 ]);
 
 export const selectedItems = writable([]);

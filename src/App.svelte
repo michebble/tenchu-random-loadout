@@ -1,7 +1,7 @@
 <script>
   import RandomButton from "./lib/RandomButton.svelte";
   import SelectedItem from "./lib/SelectedItem.svelte";
-  import { selectedItems } from "./lib/stores";
+  import { selectedItems, images } from "./lib/stores";
   let selectedItemsValue;
 
   selectedItems.subscribe((value) => {
@@ -12,8 +12,8 @@
 <main>
   <RandomButton />
   <div class="wrapper">
-    {#each selectedItemsValue as { name, amount, src }}
-      <SelectedItem {name} {amount} {src} />
+    {#each selectedItemsValue as { name, amount }}
+      <SelectedItem {name} {amount} src={$images[name]} />
     {:else}{/each}
   </div>
 </main>
