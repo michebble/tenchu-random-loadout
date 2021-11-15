@@ -29,8 +29,8 @@
   };
 
   const run = () => {
-    // const itemSet = pickRandom(1, $rikiWeapons).concat($ninjaItems);
-    $selectedItems = pickRandom(MAX_SELECTED_ITEMS, $ninjaItems)
+    const itemSet = pickRandom(1, $rikiWeapons).concat($ninjaItems);
+    $selectedItems = pickRandom(MAX_SELECTED_ITEMS, itemSet)
       .reduce(reducer, [])
       .filter((e) => e);
   };
