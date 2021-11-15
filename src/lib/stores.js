@@ -44,6 +44,7 @@ export const images = readable(
     explodingArrow: exploding_arrow_img,
     fireSpell: fire_spell_img,
     fireworks: fireworks_img,
+    grapplingHook: grappling_hook_img,
     grenade: grenade_img,
     healingPotion: healing_potion_img,
     invisbilitySpell: invisibility_spell_img,

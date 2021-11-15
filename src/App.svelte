@@ -3,6 +3,7 @@
   import SelectedItem from "./lib/SelectedItem.svelte";
   import { selectedItems, images } from "./lib/stores";
   let selectedItemsValue;
+  const grapplingHook = "grapplingHook";
 
   selectedItems.subscribe((value) => {
     selectedItemsValue = value;
@@ -15,6 +16,11 @@
     {#each selectedItemsValue as { name, amount }}
       <SelectedItem {name} {amount} src={$images[name]} />
     {:else}{/each}
+    <SelectedItem
+      name={grapplingHook}
+      amount={1}
+      src={$images[grapplingHook]}
+    />
   </div>
 </main>
 
