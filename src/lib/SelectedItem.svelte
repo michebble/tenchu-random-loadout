@@ -4,13 +4,13 @@
   export let src;
 </script>
 
-<div class="container">
+<div>
   <img {src} alt={name} />
   <p>{amount}</p>
 </div>
 
 <style>
-  .container {
+  div {
     position: relative;
     text-align: center;
   }

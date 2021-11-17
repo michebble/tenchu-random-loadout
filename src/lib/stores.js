@@ -108,3 +108,7 @@ export const ayameWeapons = writable([
 ]);
 
 export const selectedItems = writable([]);
+
+export const characters = readable(["ayame", "rikimaru"])
+
+export const currentCharacter = writable("ayame")

@@ -1,6 +1,7 @@
 <script>
   import RandomButton from "./lib/RandomButton.svelte";
   import SelectedItem from "./lib/SelectedItem.svelte";
+  import CharacterSelect from "./lib/CharacterSelect.svelte";
   import { selectedItems, images } from "./lib/stores";
   let selectedItemsValue;
   const grapplingHook = "grapplingHook";
@@ -11,6 +12,7 @@
 </script>
 
 <main>
+  <CharacterSelect />
   <RandomButton />
   <div class="wrapper">
     {#each selectedItemsValue as { name, amount }}

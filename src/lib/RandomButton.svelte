@@ -4,6 +4,7 @@
     ayameWeapons,
     ninjaItems,
     selectedItems,
+    currentCharacter,
   } from "./stores.js";
 
   const MAX_SELECTED_ITEMS = 5;
@@ -28,8 +29,14 @@
     return selectedItems.concat({ name, amount: pickAmount(upperLimit) });
   };
 
+  const weaponSets = {
+    rikimaru: $rikiWeapons,
+    ayame: $ayameWeapons,
+  };
+
   const run = () => {
-    const itemSet = pickRandom(1, $rikiWeapons).concat($ninjaItems);
+    const weaponSet = weaponSets[$currentCharacter];
+    const itemSet = pickRandom(1, weaponSet).concat($ninjaItems);
     $selectedItems = pickRandom(MAX_SELECTED_ITEMS, itemSet)
       .reduce(reducer, [])
       .filter((e) => e);
