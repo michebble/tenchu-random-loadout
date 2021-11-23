@@ -15,7 +15,7 @@
 <main>
   <CharacterSelect />
   <RandomButton />
-  <div class="wrapper">
+  <div>
     {#each selectedItemsValue as { name, amount }}
       <SelectedItem {name} {amount} src={$images[name]} />
     {/each}
@@ -28,7 +28,7 @@
 </main>
 
 <style>
-  .wrapper {
+  div {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-auto-rows: minmax(80px, auto);
