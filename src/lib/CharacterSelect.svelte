@@ -1,5 +1,5 @@
 <script>
-  import { currentCharacter, characters } from "./stores.js";
+  import { currentCharacter, characters } from "./stores/characters";
 </script>
 
 <div>

@@ -1,7 +1,7 @@
-<script>
-  export let name;
-  export let amount;
-  export let src;
+<script lang="ts">
+  export let name: string;
+  export let amount: number;
+  export let src: string;
 </script>
 
 <div>

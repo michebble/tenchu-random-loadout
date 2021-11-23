@@ -4,8 +4,8 @@
     ayameWeapons,
     ninjaItems,
     selectedItems,
-    currentCharacter,
-  } from "./stores.js";
+  } from "./stores";
+  import { currentCharacter, Character } from "./stores/characters";
 
   const MAX_SELECTED_ITEMS = 5;
   const MAX_ITEM_COUNT = 15;
@@ -30,8 +30,8 @@
   };
 
   const weaponSets = {
-    rikimaru: $rikiWeapons,
-    ayame: $ayameWeapons,
+    [Character.Rikimaru]: $rikiWeapons,
+    [Character.Ayame]: $ayameWeapons,
   };
 
   const run = () => {

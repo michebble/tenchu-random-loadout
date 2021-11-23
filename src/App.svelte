@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
   import RandomButton from "./lib/RandomButton.svelte";
   import SelectedItem from "./lib/SelectedItem.svelte";
   import CharacterSelect from "./lib/CharacterSelect.svelte";
-  import { selectedItems, images } from "./lib/stores";
-  let selectedItemsValue;
+  import { selectedItems } from "./lib/stores";
+  import { images } from "./lib/stores/images";
   const grapplingHook = "grapplingHook";
+  let selectedItemsValue;
 
   selectedItems.subscribe((value) => {
     selectedItemsValue = value;
@@ -17,7 +18,7 @@
   <div class="wrapper">
     {#each selectedItemsValue as { name, amount }}
       <SelectedItem {name} {amount} src={$images[name]} />
-    {:else}{/each}
+    {/each}
     <SelectedItem
       name={grapplingHook}
       amount={1}
