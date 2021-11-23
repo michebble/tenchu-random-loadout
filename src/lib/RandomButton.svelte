@@ -6,28 +6,10 @@
     selectedItems,
   } from "./stores";
   import { currentCharacter, Character } from "./stores/characters";
+  import { pickRandom } from "./picks";
+  import { ninjaReducer } from "./reducers";
 
   const MAX_SELECTED_ITEMS = 5;
-  const MAX_ITEM_COUNT = 15;
-
-  const pickRandom = (count, arr) => {
-    let _arr = [...arr];
-    return [...Array(count)].map(
-      () => _arr.splice(Math.floor(Math.random() * _arr.length), 1)[0]
-    );
-  };
-
-  const pickAmount = (max) => Math.floor(Math.random() * max) + 1;
-
-  const reducer = (selectedItems, { name, limit }) => {
-    const currentTotal = selectedItems
-      .map((seclectedItem) => seclectedItem.amount)
-      .reduce((a, b) => a + b, 0);
-    if (currentTotal >= MAX_ITEM_COUNT) return selectedItems;
-    const remaining = MAX_ITEM_COUNT - currentTotal;
-    const upperLimit = Math.min(...[remaining, limit]);
-    return selectedItems.concat({ name, amount: pickAmount(upperLimit) });
-  };
 
   const weaponSets = {
     [Character.Rikimaru]: $rikiWeapons,
@@ -38,7 +20,7 @@
     const weaponSet = weaponSets[$currentCharacter];
     const itemSet = pickRandom(1, weaponSet).concat($ninjaItems);
     $selectedItems = pickRandom(MAX_SELECTED_ITEMS, itemSet)
-      .reduce(reducer, [])
+      .reduce(ninjaReducer, [])
       .filter((e) => e);
   };
 </script>
