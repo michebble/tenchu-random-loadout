@@ -5,6 +5,6 @@ export enum Character {
   Ayame = "ayame"
 }
 
-export const characters = readable([Character.Ayame, Character.Rikimaru])
+export const characters = readable([Character.Ayame, Character.Rikimaru]);
 
-export const currentCharacter = writable(Character.Ayame)
+export const currentCharacter = writable(Character.Ayame);
