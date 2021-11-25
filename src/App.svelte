@@ -5,11 +5,9 @@
   import { selectedItems } from "./lib/stores";
   import { images } from "./lib/stores/images";
   const grapplingHook = "grapplingHook";
-  let selectedItemsValue;
 
-  selectedItems.subscribe((value) => {
-    selectedItemsValue = value;
-  });
+  let selectedItemsValue;
+  selectedItems.subscribe((value) => (selectedItemsValue = value));
 </script>
 
 <main>

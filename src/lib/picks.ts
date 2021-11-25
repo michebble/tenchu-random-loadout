@@ -1,5 +1,5 @@
 export const pickRandom = (count: number, arr: Array<any>): any => {
-  let _arr = [...arr];
+  const _arr = [...arr];
   return [...Array(count)].map(
     () => _arr.splice(Math.floor(Math.random() * _arr.length), 1)[0]
   );

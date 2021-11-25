@@ -1,4 +1,4 @@
-import { readable } from 'svelte/store';
+import { readable } from "svelte/store";
 
 import binding_spell_img from "../../assets/binding_spell.jpeg";
 import blow_gun_img from "../../assets/blow_gun.jpeg";
@@ -32,38 +32,36 @@ import super_shuriken_img from "../../assets/super_shuriken.jpeg";
 import tetsubishi_img from "../../assets/tetsubishi.jpeg";
 import tiger_trap_img from "../../assets/tiger_trap.jpeg";
 
-export const images = readable(
-  {
-    bindingSpell: binding_spell_img,
-    blowGun: blow_gun_img,
-    caltrops: caltrops_img,
-    chameleonSpell: chameleon_spell_img,
-    colouredRice: colored_rice_img,
-    decoyWhistle: decoy_whistle_img,
-    dogBone: dog_bone_img,
-    explodingArrow: exploding_arrow_img,
-    fireSpell: fire_spell_img,
-    fireworks: fireworks_img,
-    grapplingHook: grappling_hook_img,
-    grenade: grenade_img,
-    healingPotion: healing_potion_img,
-    invisbilitySpell: invisibility_spell_img,
-    mine: mine_img,
-    ninjaArmor: ninja_armor_img,
-    ninjaRebirth: ninja_rebirth_img,
-    poisonAntidote: poison_antidote_img,
-    poisonRice: poison_rice_img,
-    shuriken: shuriken_img,
-    smokeBomb: smoke_bomb_img,
-    stickyBomb: sticky_bomb_img,
-    stoneOfPower: stone_of_power_img,
-    strengthPotion: strength_potion_img,
-    superShuriken: super_shuriken_img,
-    tetsubishi: tetsubishi_img,
-    tigerTrap: tiger_trap_img,
-    fugaku: fugaku_img,
-    muramasa: muramasa_img,
-    dokuto: dokuto_img,
-    kasumiAndShizuku: kasumi_and_shizuku_img,
-  }
-)
+export const images = readable({
+  bindingSpell: binding_spell_img,
+  blowGun: blow_gun_img,
+  caltrops: caltrops_img,
+  chameleonSpell: chameleon_spell_img,
+  colouredRice: colored_rice_img,
+  decoyWhistle: decoy_whistle_img,
+  dogBone: dog_bone_img,
+  explodingArrow: exploding_arrow_img,
+  fireSpell: fire_spell_img,
+  fireworks: fireworks_img,
+  grapplingHook: grappling_hook_img,
+  grenade: grenade_img,
+  healingPotion: healing_potion_img,
+  invisbilitySpell: invisibility_spell_img,
+  mine: mine_img,
+  ninjaArmor: ninja_armor_img,
+  ninjaRebirth: ninja_rebirth_img,
+  poisonAntidote: poison_antidote_img,
+  poisonRice: poison_rice_img,
+  shuriken: shuriken_img,
+  smokeBomb: smoke_bomb_img,
+  stickyBomb: sticky_bomb_img,
+  stoneOfPower: stone_of_power_img,
+  strengthPotion: strength_potion_img,
+  superShuriken: super_shuriken_img,
+  tetsubishi: tetsubishi_img,
+  tigerTrap: tiger_trap_img,
+  fugaku: fugaku_img,
+  muramasa: muramasa_img,
+  dokuto: dokuto_img,
+  kasumiAndShizuku: kasumi_and_shizuku_img,
+});
