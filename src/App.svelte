@@ -7,7 +7,7 @@
   const grapplingHook = "grapplingHook";
 
   let selectedItemsValue;
-  selectedItems.subscribe((value) => selectedItemsValue = value);
+  selectedItems.subscribe((value) => (selectedItemsValue = value));
 </script>
 
 <main>

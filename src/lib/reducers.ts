@@ -1,4 +1,4 @@
-import { pickAmount } from "./picks"
+import { pickAmount } from "./picks";
 
 const MAX_ITEM_COUNT = 15;
 
