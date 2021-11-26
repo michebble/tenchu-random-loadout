@@ -4,6 +4,7 @@
   import CharacterSelect from "./lib/CharacterSelect.svelte";
   import { selectedItems } from "./lib/stores";
   import { images } from "./lib/stores/images";
+  import ItemSelect from "./lib/ItemSelect.svelte";
   const grapplingHook = "grapplingHook";
 
   let selectedItemsValue;
@@ -11,7 +12,9 @@
 </script>
 
 <main>
+  <h1>Tenchu Random Loadout</h1>
   <CharacterSelect />
+  <ItemSelect />
   <RandomButton />
   <div>
     {#each selectedItemsValue as { name, amount }}
