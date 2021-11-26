@@ -1,10 +1,6 @@
 <script lang="ts">
-  import {
-    rikiWeapons,
-    ayameWeapons,
-    ninjaItems,
-    selectedItems,
-  } from "./stores";
+  import { selectedItems } from "./stores";
+  import { rikiWeapons, ayameWeapons, ninjaItems } from "./stores/items";
   import { currentCharacter, Character } from "./stores/characters";
   import { pickRandom } from "./picks";
   import { ninjaReducer } from "./reducers";
@@ -18,7 +14,9 @@
 
   const run = () => {
     const weaponSet = weaponSets[$currentCharacter];
-    const itemSet = pickRandom(1, weaponSet).concat($ninjaItems);
+    const itemSet = pickRandom(1, Object.values(weaponSet))
+      .concat(Object.values($ninjaItems))
+      .filter((item) => item.enabled);
     $selectedItems = pickRandom(MAX_SELECTED_ITEMS, itemSet)
       .reduce(ninjaReducer, [])
       .filter((e) => e);
