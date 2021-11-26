@@ -1,9 +1,18 @@
-<script>
+<script lang="ts">
   import { rikiWeapons, ayameWeapons, ninjaItems } from "./stores/items";
   import { currentCharacter, Character } from "./stores/characters";
-  const toggleEnabled = (set, key, item) => {
+  const toggleEnabled = (set: object, key: string, item: any): void => {
     item.enabled = !item.enabled;
     set[key] = item;
+  };
+  const isDefaultItem = (name: string): boolean => {
+    return [
+      "caltrops",
+      "colouredRice",
+      "healingPotion",
+      "shuriken",
+      "tetsubishi",
+    ].includes(name);
   };
 </script>
 
@@ -17,6 +26,7 @@
           type="checkbox"
           name="items"
           checked={item.enabled}
+          disabled={isDefaultItem(item.name)}
         />
         <span>{item.name}</span>
       </label>
