@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from "../services/lang/i18n";
   import { currentCharacter, characters } from "./stores/characters";
 </script>
 
@@ -13,14 +14,8 @@
           name="characters"
           value={character}
         />
-        <span>{character}</span>
+        <span>{$_(`characters.${character}`)}</span>
       </label>
     {/each}
   </fieldset>
 </div>
-
-<style>
-  span {
-    text-transform: capitalize;
-  }
-</style>

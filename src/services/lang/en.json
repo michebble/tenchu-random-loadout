@@ -1,4 +1,8 @@
 {
+  "characters": {
+    "ayame": "Ayame",
+    "rikimaru": "Rikimaru"
+  },
   "items": {
     "bindingSpell": "Binding Spell",
     "blowGun": "Blow Gun",
