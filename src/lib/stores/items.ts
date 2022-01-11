@@ -26,7 +26,7 @@ export const ninjaItems = writable({
   colouredRice: { name: "colouredRice", limit: 5, enabled: true },
   healingPotion: { name: "healingPotion", limit: 15, enabled: true },
   shuriken: { name: "shuriken", limit: 15, enabled: true },
-  tetsubishi: { name: "tetsubishi", limit: 5, enabled: true },
+  tetsubishi: { name: "tetsubishi", limit: 5, enabled: false },
 });
 
 export const rikiWeapons = writable({

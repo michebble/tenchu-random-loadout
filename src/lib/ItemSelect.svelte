@@ -6,15 +6,6 @@
     item.enabled = !item.enabled;
     set[key] = item;
   };
-  const isDefaultItem = (name: string): boolean => {
-    return [
-      "caltrops",
-      "colouredRice",
-      "healingPotion",
-      "shuriken",
-      "tetsubishi",
-    ].includes(name);
-  };
 </script>
 
 <div>
@@ -27,7 +18,6 @@
           type="checkbox"
           name="items"
           checked={item.enabled}
-          disabled={isDefaultItem(item.name)}
         />
         <span>{$_(`items.${item.name}`)}</span>
       </label>
