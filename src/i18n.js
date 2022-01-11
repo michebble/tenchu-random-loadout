@@ -5,8 +5,8 @@ import {
   init,
 } from "svelte-i18n";
 
-register("en", () => import("./en.json"));
-register("jp", () => import("./jp.json"));
+register("en", () => import("./locales/en.json"));
+register("jp", () => import("./locales/jp.json"));
 
 init({
   fallbackLocale: "en",
