@@ -35,5 +35,9 @@
     "tetsubishi": "鉄菱",
     "tigerTrap": "虎バサミ",
     "grapplingHook": "鉤縄"
-  }
+  },
+  "characterSelect.title": "忍者",
+  "itemSelect.title": "忍具",
+  "weaponSelect.title": "武器",
+  "RandomizeButton": "ランドム"
 }

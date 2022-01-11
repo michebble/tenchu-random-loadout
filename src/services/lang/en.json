@@ -35,5 +35,9 @@
     "dokuto": "Dokuto",
     "kasumiAndShizuku": "Kasumi and Shizuku",
     "grapplingHook": "Grappling Hook"
-  }
+  },
+  "characterSelect.title": "Charater Select",
+  "itemSelect.title": "Items",
+  "weaponSelect.title": "Weapons",
+  "RandomizeButton": "Randomize Loadout"
 }

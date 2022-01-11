@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { _ } from "../services/lang/i18n";
+  import { _ } from "svelte-i18n";
   import { currentCharacter, characters } from "./stores/characters";
 </script>
 
 <div>
   <fieldset>
-    <legend>Character Select</legend>
+    <legend>{$_(`characterSelect.title`)}</legend>
     {#each $characters as character}
       <label>
         <input

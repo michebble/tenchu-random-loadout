@@ -1,31 +1,38 @@
 <script lang="ts">
-  import { setupI18n } from "./services/lang/i18n";
+  import { isLoading } from "svelte-i18n";
+
+  import LocaleSelect from "./lib/LocaleSelect.svelte";
+  import CharacterSelect from "./lib/CharacterSelect.svelte";
+  import ItemSelect from "./lib/ItemSelect.svelte";
   import RandomButton from "./lib/RandomButton.svelte";
   import SelectedItem from "./lib/SelectedItem.svelte";
-  import CharacterSelect from "./lib/CharacterSelect.svelte";
+
   import { selectedItems } from "./lib/stores";
   import { images } from "./lib/stores/images";
-  import ItemSelect from "./lib/ItemSelect.svelte";
-  setupI18n({ withLocale: "jp" });
   const grapplingHook = "grapplingHook";
 </script>
 
-<main>
-  <h1>Tenchu Random Loadout</h1>
-  <CharacterSelect />
-  <ItemSelect />
-  <RandomButton />
-  <div>
-    {#each $selectedItems as { name, amount }}
-      <SelectedItem {name} {amount} src={$images[name]} />
-    {/each}
-    <SelectedItem
-      name={grapplingHook}
-      amount={1}
-      src={$images[grapplingHook]}
-    />
-  </div>
-</main>
+{#if $isLoading}
+  <p>Loading</p>
+{:else}
+  <main>
+    <LocaleSelect />
+    <h1>Tenchu Random Loadout</h1>
+    <CharacterSelect />
+    <ItemSelect />
+    <RandomButton />
+    <div>
+      {#each $selectedItems as { name, amount }}
+        <SelectedItem {name} {amount} src={$images[name]} />
+      {/each}
+      <SelectedItem
+        name={grapplingHook}
+        amount={1}
+        src={$images[grapplingHook]}
+      />
+    </div>
+  </main>
+{/if}
 
 <style>
   div {
