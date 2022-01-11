@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from "../services/lang/i18n";
   import { rikiWeapons, ayameWeapons, ninjaItems } from "./stores/items";
   import { currentCharacter, Character } from "./stores/characters";
   const toggleEnabled = (set: object, key: string, item: any): void => {
@@ -28,7 +29,7 @@
           checked={item.enabled}
           disabled={isDefaultItem(item.name)}
         />
-        <span>{item.name}</span>
+        <span>{$_(`items.${item.name}`)}</span>
       </label>
     {/each}
   </fieldset>
@@ -43,7 +44,7 @@
             name="weapons"
             checked={weapon.enabled}
           />
-          <span>{weapon.name}</span>
+          <span>{$_(`items.${weapon.name}`)}</span>
         </label>
       {/each}
     {:else}
@@ -55,7 +56,7 @@
             name="weapons"
             checked={weapon.enabled}
           />
-          <span>{weapon.name}</span>
+          <span>{$_(`items.${weapon.name}`)}</span>
         </label>
       {/each}
     {/if}

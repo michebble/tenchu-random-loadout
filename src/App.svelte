@@ -1,14 +1,13 @@
 <script lang="ts">
+  import { setupI18n } from "./services/lang/i18n";
   import RandomButton from "./lib/RandomButton.svelte";
   import SelectedItem from "./lib/SelectedItem.svelte";
   import CharacterSelect from "./lib/CharacterSelect.svelte";
   import { selectedItems } from "./lib/stores";
   import { images } from "./lib/stores/images";
   import ItemSelect from "./lib/ItemSelect.svelte";
+  setupI18n({ withLocale: "en" });
   const grapplingHook = "grapplingHook";
-
-  let selectedItemsValue;
-  selectedItems.subscribe((value) => (selectedItemsValue = value));
 </script>
 
 <main>
@@ -17,7 +16,7 @@
   <ItemSelect />
   <RandomButton />
   <div>
-    {#each selectedItemsValue as { name, amount }}
+    {#each $selectedItems as { name, amount }}
       <SelectedItem {name} {amount} src={$images[name]} />
     {/each}
     <SelectedItem
