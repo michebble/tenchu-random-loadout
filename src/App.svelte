@@ -6,7 +6,7 @@
   import { selectedItems } from "./lib/stores";
   import { images } from "./lib/stores/images";
   import ItemSelect from "./lib/ItemSelect.svelte";
-  setupI18n({ withLocale: "en" });
+  setupI18n({ withLocale: "jp" });
   const grapplingHook = "grapplingHook";
 </script>
 

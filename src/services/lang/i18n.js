@@ -5,6 +5,7 @@ import {
   _
 } from 'svelte-i18n';
 import en from './en.json';
+import jp from './jp.json';
 function setupI18n({
   withLocale: _locale
 } = {
@@ -12,6 +13,7 @@ function setupI18n({
   }) {
   dictionary.set({
     en: en,
+    jp: jp
   });
   locale.set(_locale);
 }
