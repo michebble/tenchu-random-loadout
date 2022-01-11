@@ -1,10 +1,11 @@
 <script lang="ts">
+  import { _ } from "svelte-i18n";
   import { currentCharacter, characters } from "./stores/characters";
 </script>
 
 <div>
   <fieldset>
-    <legend>Character Select</legend>
+    <legend>{$_(`characterSelect.title`)}</legend>
     {#each $characters as character}
       <label>
         <input
@@ -13,14 +14,8 @@
           name="characters"
           value={character}
         />
-        <span>{character}</span>
+        <span>{$_(`characters.${character}`)}</span>
       </label>
     {/each}
   </fieldset>
 </div>
-
-<style>
-  span {
-    text-transform: capitalize;
-  }
-</style>

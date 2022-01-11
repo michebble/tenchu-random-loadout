@@ -1,0 +1,43 @@
+{
+  "characters": {
+    "ayame": "Ayame",
+    "rikimaru": "Rikimaru"
+  },
+  "items": {
+    "bindingSpell": "Binding Spell",
+    "blowGun": "Blow Gun",
+    "chameleonSpell": "Chameleon Spell",
+    "decoyWhistle": "Decoy Whistle",
+    "dogBone": "Dog Bone",
+    "explodingArrow": "Exploding Arrow",
+    "fireSpell": "Fire Spell",
+    "fireworks": "Fireworks",
+    "grenade": "Grenade",
+    "invisbilitySpell": "Invisbility Spell",
+    "mine": "Mine",
+    "ninjaArmor": "Ninja Armor",
+    "ninjaRebirth": "Ninja Rebirth",
+    "poisonAntidote": "Poison Antidote",
+    "poisonRice": "Poison Rice",
+    "smokeBomb": "Smoke Bomb",
+    "stickyBomb": "Sticky Bomb",
+    "stoneOfPower": "Stone Of Power",
+    "strengthPotion": "Strength Potion",
+    "superShuriken": "Super Shuriken",
+    "tigerTrap": "Tiger Trap",
+    "caltrops": "Caltrops",
+    "colouredRice": "Coloured Rice",
+    "healingPotion": "Healing Potion",
+    "shuriken": "Shuriken",
+    "tetsubishi": "Tetsubishi",
+    "fugaku": "Fugaku",
+    "muramasa": "Muramasa",
+    "dokuto": "Dokuto",
+    "kasumiAndShizuku": "Kasumi and Shizuku",
+    "grapplingHook": "Grappling Hook"
+  },
+  "characterSelect.title": "Charater Select",
+  "itemSelect.title": "Items",
+  "weaponSelect.title": "Weapons",
+  "RandomizeButton": "Randomize Loadout"
+}

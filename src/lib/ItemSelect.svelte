@@ -1,24 +1,16 @@
 <script lang="ts">
+  import { _ } from "svelte-i18n";
   import { rikiWeapons, ayameWeapons, ninjaItems } from "./stores/items";
   import { currentCharacter, Character } from "./stores/characters";
   const toggleEnabled = (set: object, key: string, item: any): void => {
     item.enabled = !item.enabled;
     set[key] = item;
   };
-  const isDefaultItem = (name: string): boolean => {
-    return [
-      "caltrops",
-      "colouredRice",
-      "healingPotion",
-      "shuriken",
-      "tetsubishi",
-    ].includes(name);
-  };
 </script>
 
 <div>
   <fieldset class="item-fieldset">
-    <legend>Items</legend>
+    <legend>{$_(`itemSelect.title`)}</legend>
     {#each Object.entries($ninjaItems) as [key, item]}
       <label class="item-label">
         <input
@@ -26,14 +18,13 @@
           type="checkbox"
           name="items"
           checked={item.enabled}
-          disabled={isDefaultItem(item.name)}
         />
-        <span>{item.name}</span>
+        <span>{$_(`items.${item.name}`)}</span>
       </label>
     {/each}
   </fieldset>
   <fieldset>
-    <legend>Weapons</legend>
+    <legend>{$_(`weaponSelect.title`)}</legend>
     {#if $currentCharacter === Character.Rikimaru}
       {#each Object.entries($rikiWeapons) as [key, weapon]}
         <label>
@@ -43,7 +34,7 @@
             name="weapons"
             checked={weapon.enabled}
           />
-          <span>{weapon.name}</span>
+          <span>{$_(`items.${weapon.name}`)}</span>
         </label>
       {/each}
     {:else}
@@ -55,7 +46,7 @@
             name="weapons"
             checked={weapon.enabled}
           />
-          <span>{weapon.name}</span>
+          <span>{$_(`items.${weapon.name}`)}</span>
         </label>
       {/each}
     {/if}

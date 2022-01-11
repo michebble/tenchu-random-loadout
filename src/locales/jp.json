@@ -1,0 +1,43 @@
+{
+  "characters": {
+    "ayame": "彩女",
+    "rikimaru": "力丸"
+  },
+  "items": {
+    "bindingSpell": "結界の札",
+    "blowGun": "吹き矢",
+    "caltrops": "まき菱",
+    "chameleonSpell": "変化の術",
+    "colouredRice": "五色米",
+    "decoyWhistle": "真似笛",
+    "dogBone": "忍犬",
+    "dokuto": "朧",
+    "explodingArrow": "火矢",
+    "fireSpell": "火龍の術",
+    "fireworks": "花火",
+    "fugaku": "富嶽",
+    "grenade": "癇癪玉",
+    "healingPotion": "神命丹",
+    "invisbilitySpell": "霧隠れの術",
+    "kasumiAndShizuku": "霞と雫",
+    "mine": "地雷",
+    "muramasa": "村正",
+    "ninjaArmor": "忍び鎧",
+    "ninjaRebirth": "空蝉の術",
+    "poisonAntidote": "毒命丹",
+    "poisonRice": "痺れ団子",
+    "shuriken": "手裏剣",
+    "smokeBomb": "煙玉",
+    "stickyBomb": "爆ぜ車",
+    "stoneOfPower": "力の石",
+    "strengthPotion": "力命丹",
+    "superShuriken": "八方手裏剣",
+    "tetsubishi": "鉄菱",
+    "tigerTrap": "虎バサミ",
+    "grapplingHook": "鉤縄"
+  },
+  "characterSelect.title": "忍者",
+  "itemSelect.title": "忍具",
+  "weaponSelect.title": "武器",
+  "RandomizeButton": "ランドム"
+}
