@@ -2,51 +2,54 @@
   import { _ } from "svelte-i18n";
   import { rikiWeapons, ayameWeapons, ninjaItems } from "./stores/items";
   import { currentCharacter, Character } from "./stores/characters";
-  const toggleEnabled = (set: object, key: string, item: any): void => {
-    item.enabled = !item.enabled;
-    set[key] = item;
+  const toggleEnabled = (
+    itemArray: Array<{ name: string; enabled: boolean }>,
+    name: string
+  ): void => {
+    const objIndex = itemArray.findIndex((obj) => obj.name === name);
+    itemArray[objIndex].enabled = !itemArray[objIndex].enabled;
   };
 </script>
 
 <div>
   <fieldset class="item-fieldset">
     <legend>{$_(`itemSelect.title`)}</legend>
-    {#each Object.entries($ninjaItems) as [key, item]}
+    {#each $ninjaItems as { name, enabled }}
       <label class="item-label">
         <input
-          on:change={() => toggleEnabled($ninjaItems, key, item)}
+          on:change={() => toggleEnabled($ninjaItems, name)}
           type="checkbox"
           name="items"
-          checked={item.enabled}
+          checked={enabled}
         />
-        <span>{$_(`items.${item.name}`)}</span>
+        <span>{$_(`items.${name}`)}</span>
       </label>
     {/each}
   </fieldset>
   <fieldset>
     <legend>{$_(`weaponSelect.title`)}</legend>
     {#if $currentCharacter === Character.Rikimaru}
-      {#each Object.entries($rikiWeapons) as [key, weapon]}
+      {#each $rikiWeapons as { name, enabled }}
         <label>
           <input
-            on:change={() => toggleEnabled($rikiWeapons, key, weapon)}
+            on:change={() => toggleEnabled($rikiWeapons, name)}
             type="checkbox"
             name="weapons"
-            checked={weapon.enabled}
+            checked={enabled}
           />
-          <span>{$_(`items.${weapon.name}`)}</span>
+          <span>{$_(`items.${name}`)}</span>
         </label>
       {/each}
     {:else}
-      {#each Object.entries($ayameWeapons) as [key, weapon]}
+      {#each $ayameWeapons as { name, enabled }}
         <label>
           <input
-            on:change={() => toggleEnabled($ayameWeapons, key, weapon)}
+            on:change={() => toggleEnabled($ayameWeapons, name)}
             type="checkbox"
             name="weapons"
-            checked={weapon.enabled}
+            checked={enabled}
           />
-          <span>{$_(`items.${weapon.name}`)}</span>
+          <span>{$_(`items.${name}`)}</span>
         </label>
       {/each}
     {/if}
