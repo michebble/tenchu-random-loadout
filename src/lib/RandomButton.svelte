@@ -15,8 +15,8 @@
 
   const run = () => {
     const weaponSet = weaponSets[$currentCharacter];
-    const itemSet = pickRandom(1, Object.values(weaponSet))
-      .concat(Object.values($ninjaItems))
+    const itemSet = pickRandom(1, weaponSet)
+      .concat($ninjaItems)
       .filter((item) => item.enabled);
     $selectedItems = pickRandom(MAX_SELECTED_ITEMS, itemSet)
       .reduce(ninjaReducer, [])
