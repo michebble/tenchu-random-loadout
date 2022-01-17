@@ -1,7 +1,11 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
-  import { selectedItems } from "./stores";
-  import { rikiWeapons, ayameWeapons, ninjaItems } from "./stores/items";
+  import {
+    rikiWeapons,
+    ayameWeapons,
+    ninjaItems,
+    selectedItems,
+  } from "./stores/items";
   import { currentCharacter, Character } from "./stores/characters";
   import { pickRandom } from "./picks";
   import { ninjaReducer } from "./reducers";

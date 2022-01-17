@@ -38,3 +38,5 @@ export const ayameWeapons = writable([
   { name: "dokuto", limit: 1, enabled: false },
   { name: "kasumiAndShizuku", limit: 1, enabled: false },
 ]);
+
+export const selectedItems = writable([]);
