@@ -67,4 +67,4 @@ export const ayameWeapons = writable([
   { name: "kasumiAndShizuku", limit: 1, enabled: false },
 ]);
 
-export const selectedItems = writable([]);
+

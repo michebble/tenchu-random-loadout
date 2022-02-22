@@ -1,11 +1,12 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
-  import { currentCharacter, characters } from "./stores/characters";
+  export let characters;
+  export let currentCharacter;
 </script>
 
 <div>
   <h3>{$_(`characterSelect.title`)}</h3>
-  {#each $characters as character}
+  {#each characters as character}
     <label>
       <input
         bind:group={$currentCharacter}

@@ -1,7 +1,12 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
-  import { selectedItems } from "./stores/items";
-  import { currentWeaponSet, currentNingu } from "./stores/tenchu_san";
+  import {
+    currentWeaponSet,
+    currentNingu,
+    selectedItems,
+    currentCharacter,
+    characters,
+  } from "./stores/san/store";
 
   import CharacterSelect from "./CharacterSelect.svelte";
   import NinguMultiSelect from "./NinguMultiSelect.svelte";
@@ -11,7 +16,7 @@
 
 <div>
   <fieldset>
-    <CharacterSelect />
+    <CharacterSelect characters={$characters} {currentCharacter} />
     <NinguMultiSelect ninguSet={$currentNingu} title={$_(`itemSelect.title`)} />
     <NinguMultiSelect
       ninguSet={$currentWeaponSet}

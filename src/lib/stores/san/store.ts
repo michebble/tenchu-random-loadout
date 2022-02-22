@@ -1,5 +1,5 @@
-import { derived } from "svelte/store";
-import { currentCharacter, Character } from "./characters";
+import { derived, writable } from "svelte/store";
+import { currentCharacter, Character, characters } from "./characters";
 import { rikiWeapons, ayameWeapons, rikiNingu, ayameNingu } from "./items";
 export const currentWeaponSet = derived([currentCharacter, rikiWeapons, ayameWeapons], ([$currentCharacter, $rikiWeapons, $ayameWeapons]) => {
   const weaponSets = {
@@ -15,3 +15,6 @@ export const currentNingu = derived([currentCharacter, rikiNingu, ayameNingu], (
   }
   return ninguSets[$currentCharacter];
 });
+
+export const selectedItems = writable([]);
+export { currentCharacter, characters };
