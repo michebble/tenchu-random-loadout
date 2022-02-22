@@ -19,7 +19,11 @@
     <NinguMultiSelect ninguSet={$currentNingu} />
     <h3>{$_(`weaponSelect.title`)}</h3>
     <NinguMultiSelect ninguSet={$currentWeaponSet} />
-    <RandomButton />
+    <RandomButton
+      currentNingu={$currentNingu}
+      currentWeaponSet={$currentWeaponSet}
+      itemSelection={selectedItems}
+    />
   </fieldset>
   <div class="selected-items">
     {#each $selectedItems as { name, amount }}
