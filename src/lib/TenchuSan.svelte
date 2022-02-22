@@ -15,10 +15,11 @@
 <div>
   <fieldset>
     <CharacterSelect />
-    <h3>{$_(`itemSelect.title`)}</h3>
-    <NinguMultiSelect ninguSet={$currentNingu} />
-    <h3>{$_(`weaponSelect.title`)}</h3>
-    <NinguMultiSelect ninguSet={$currentWeaponSet} />
+    <NinguMultiSelect ninguSet={$currentNingu} title={$_(`itemSelect.title`)} />
+    <NinguMultiSelect
+      ninguSet={$currentWeaponSet}
+      title={$_(`weaponSelect.title`)}
+    />
     <RandomButton
       currentNingu={$currentNingu}
       currentWeaponSet={$currentWeaponSet}

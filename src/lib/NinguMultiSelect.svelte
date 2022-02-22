@@ -1,21 +1,25 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
   export let ninguSet;
+  export let title;
 </script>
 
-<div class="ningu">
-  {#each ninguSet as item}
-    <label class="item-label">
-      <input
-        value={item.name}
-        type="checkbox"
-        name="items"
-        bind:checked={item.enabled}
-        autocomplete="nope"
-      />
-      <span>{$_(`items.${item.name}`)}</span>
-    </label>
-  {/each}
+<div>
+  <h3>{title}</h3>
+  <div class="ningu">
+    {#each ninguSet as item}
+      <label class="item-label">
+        <input
+          value={item.name}
+          type="checkbox"
+          name="items"
+          bind:checked={item.enabled}
+          autocomplete="nope"
+        />
+        <span>{$_(`items.${item.name}`)}</span>
+      </label>
+    {/each}
+  </div>
 </div>
 
 <style>
