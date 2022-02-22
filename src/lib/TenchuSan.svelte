@@ -1,13 +1,8 @@
-<script>
+<script lang="ts">
   import { _ } from "svelte-i18n";
-  import { currentCharacter, Character } from "./stores/characters";
-  import {
-    rikiWeapons,
-    ayameWeapons,
-    ninjaItems,
-    selectedItems,
-  } from "./stores/items";
+  import { selectedItems } from "./stores/items";
   import { images } from "./stores/images";
+  import { currentWeaponSet, currentNingu } from "./stores/tenchu_san";
 
   import CharacterSelect from "./CharacterSelect.svelte";
   import NinguMultiSelect from "./NinguMultiSelect.svelte";
@@ -21,13 +16,9 @@
   <fieldset>
     <CharacterSelect />
     <h3>{$_(`itemSelect.title`)}</h3>
-    <NinguMultiSelect ninguSet={$ninjaItems} />
+    <NinguMultiSelect ninguSet={$currentNingu} />
     <h3>{$_(`weaponSelect.title`)}</h3>
-    {#if $currentCharacter === Character.Rikimaru}
-      <NinguMultiSelect ninguSet={$rikiWeapons} />
-    {:else}
-      <NinguMultiSelect ninguSet={$ayameWeapons} />
-    {/if}
+    <NinguMultiSelect ninguSet={$currentWeaponSet} />
     <RandomButton />
   </fieldset>
   <div class="selected-items">

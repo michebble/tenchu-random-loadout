@@ -1,26 +1,19 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
-  export let ninguSet: Array<{ name: string; enabled: boolean }>;
-  const toggleEnabled = (
-    itemArray: Array<{ name: string; enabled: boolean }>,
-    name: string
-  ): void => {
-    const objIndex = itemArray.findIndex((obj) => obj.name === name);
-    itemArray[objIndex].enabled = !itemArray[objIndex].enabled;
-  };
+  export let ninguSet;
 </script>
 
 <div class="ningu">
-  {#each ninguSet as { name, enabled }}
+  {#each ninguSet as item}
     <label class="item-label">
       <input
-        on:change={() => toggleEnabled(ninguSet, name)}
-        value={name}
+        value={item.name}
         type="checkbox"
         name="items"
-        checked={enabled}
+        bind:checked={item.enabled}
+        autocomplete="nope"
       />
-      <span>{$_(`items.${name}`)}</span>
+      <span>{$_(`items.${item.name}`)}</span>
     </label>
   {/each}
 </div>
