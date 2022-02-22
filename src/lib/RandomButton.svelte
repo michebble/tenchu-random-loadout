@@ -1,22 +1,15 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
-  import { selectedItems } from "./stores";
-  import { rikiWeapons, ayameWeapons, ninjaItems } from "./stores/items";
-  import { currentCharacter, Character } from "./stores/characters";
+  import { selectedItems } from "./stores/items";
+  import { currentWeaponSet, currentNingu } from "./stores/tenchu_san";
   import { pickRandom } from "./picks";
   import { ninjaReducer } from "./reducers";
 
   const MAX_SELECTED_ITEMS = 5;
 
-  const weaponSets = {
-    [Character.Rikimaru]: $rikiWeapons,
-    [Character.Ayame]: $ayameWeapons,
-  };
-
   const run = () => {
-    const weaponSet = weaponSets[$currentCharacter];
-    const itemSet = pickRandom(1, weaponSet)
-      .concat($ninjaItems)
+    const itemSet = pickRandom(1, $currentWeaponSet)
+      .concat($currentNingu)
       .filter((item) => item.enabled);
     $selectedItems = pickRandom(MAX_SELECTED_ITEMS, itemSet)
       .reduce(ninjaReducer, [])
