@@ -7,4 +7,5 @@ export enum Character {
 
 export const characters = readable([Character.Ayame, Character.Rikimaru]);
 
-export const currentCharacter = writable(Character.Ayame);
+export const currentCharacter = writable(localStorage.getItem("currentCharacter") || Character.Ayame);
+currentCharacter.subscribe(character => localStorage["currentCharacter"] = character)

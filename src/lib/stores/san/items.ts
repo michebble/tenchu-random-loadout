@@ -1,6 +1,6 @@
 import { writable } from "svelte/store";
 
-export const ayameNingu = writable([
+export const ayameNingu = writable(JSON.parse(localStorage.getItem('ayameNinguSan')) || [
   { name: "invisbilitySpell", limit: 2, enabled: false },
   { name: "fireSpell", limit: 2, enabled: false },
   { name: "chameleonSpell", limit: 3, enabled: false },
@@ -28,7 +28,7 @@ export const ayameNingu = writable([
   { name: "tetsubishi", limit: 5, enabled: false },
   { name: "fireworks", limit: 3, enabled: false },
 ]);
-export const rikiNingu = writable([
+export const rikiNingu = writable(JSON.parse(localStorage.getItem('rikimaruNinguSan')) || [
   { name: "invisbilitySpell", limit: 2, enabled: false },
   { name: "fireSpell", limit: 2, enabled: false },
   { name: "chameleonSpell", limit: 3, enabled: false },
@@ -56,15 +56,12 @@ export const rikiNingu = writable([
   { name: "tetsubishi", limit: 5, enabled: true },
   { name: "fireworks", limit: 3, enabled: false },
 ]);
-
-export const rikiWeapons = writable([
+export const ayameWeapons = writable(JSON.parse(localStorage.getItem('ayameWeaponSan')) || [
+  { name: "dokuto", limit: 1, enabled: false },
+  { name: "kasumiAndShizuku", limit: 1, enabled: false },
+]);
+export const rikiWeapons = writable(JSON.parse(localStorage.getItem('rikimaruWeaponSan')) || [
   { name: "fugaku", limit: 1, enabled: false },
   { name: "muramasa", limit: 1, enabled: false },
 ]);
 
-export const ayameWeapons = writable([
-  { name: "dokuto", limit: 1, enabled: false },
-  { name: "kasumiAndShizuku", limit: 1, enabled: false },
-]);
-
-export const selectedItems = writable([]);
