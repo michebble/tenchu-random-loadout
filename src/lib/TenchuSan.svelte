@@ -12,15 +12,27 @@
   import NinguMultiSelect from "./NinguMultiSelect.svelte";
   import RandomButton from "./RandomButton.svelte";
   import SelectedItems from "./SelectedItems.svelte";
+
+  const persistNingu = (set) => {
+    localStorage[`${$currentCharacter}NinguSan`] = JSON.stringify(set);
+  };
+  const persistWeapon = (set) => {
+    localStorage[`${$currentCharacter}WeaponSan`] = JSON.stringify(set);
+  };
 </script>
 
 <div>
   <fieldset>
     <CharacterSelect characters={$characters} {currentCharacter} />
-    <NinguMultiSelect ninguSet={$currentNingu} title={$_(`itemSelect.title`)} />
+    <NinguMultiSelect
+      ninguSet={$currentNingu}
+      title={$_(`itemSelect.title`)}
+      handleChange={persistNingu}
+    />
     <NinguMultiSelect
       ninguSet={$currentWeaponSet}
       title={$_(`weaponSelect.title`)}
+      handleChange={persistWeapon}
     />
     <RandomButton
       currentNingu={$currentNingu}

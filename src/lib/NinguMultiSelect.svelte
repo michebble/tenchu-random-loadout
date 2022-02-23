@@ -2,6 +2,7 @@
   import { _ } from "svelte-i18n";
   export let ninguSet;
   export let title;
+  export let handleChange;
 </script>
 
 <div>
@@ -14,6 +15,7 @@
           type="checkbox"
           name="items"
           bind:checked={item.enabled}
+          on:change={(e) => handleChange(ninguSet)}
           autocomplete="nope"
         />
         <span>{$_(`items.${item.name}`)}</span>
