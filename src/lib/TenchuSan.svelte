@@ -35,11 +35,20 @@
       title={$_(`weaponSelect.title`)}
       handleChange={persistWeapon}
     />
-    <RandomButton
-      currentNingu={$currentNingu}
-      currentWeaponSet={$currentWeaponSet}
-      itemSelection={selectedItems}
-    />
+    <div class="button-box">
+      <RandomButton
+        currentNingu={$currentNingu}
+        currentWeaponSet={$currentWeaponSet}
+        itemSelection={selectedItems}
+      />
+    </div>
   </fieldset>
   <SelectedItems selectedItems={$selectedItems} />
 </div>
+
+<style>
+  .button-box {
+    display: flex;
+    justify-content: flex-end;
+  }
+</style>
