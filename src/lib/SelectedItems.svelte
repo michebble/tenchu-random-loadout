@@ -1,23 +1,23 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
-  import { images } from "./stores/images";
   import SelectedItem from "./SelectedItem.svelte";
 
   export let selectedItems;
   const grapplingHook = "grapplingHook";
 </script>
 
-<div class="selected-items">
-  {#each selectedItems as { name, amount }}
-    <SelectedItem {name} {amount} src={$images[name]} />
-  {/each}
-  <SelectedItem name={grapplingHook} amount={1} src={$images[grapplingHook]} />
+<div>
+  <h3>Loadout</h3>
+  <ul class="selected-items">
+    <SelectedItem name={grapplingHook} amount={1} />
+    {#each selectedItems as { name, amount }}
+      <SelectedItem {name} {amount} />
+    {/each}
+  </ul>
 </div>
 
 <style>
   .selected-items {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-auto-rows: minmax(80px, auto);
+    min-height: 12rem;
   }
 </style>
