@@ -14,14 +14,15 @@
   import SelectedItems from "./SelectedItems.svelte";
 
   const persistNingu = (set) => {
-    localStorage[`${$currentCharacter}NinguSan`] = JSON.stringify(set);
+    localStorage.setItem(`${$currentCharacter}NinguSan`, JSON.stringify(set));
   };
   const persistWeapon = (set) => {
-    localStorage[`${$currentCharacter}WeaponSan`] = JSON.stringify(set);
+    localStorage.setItem(`${$currentCharacter}WeaponSan`, JSON.stringify(set));
   };
 </script>
 
 <div>
+  <h2>{$_(`gameTitle.tenchuSan`)}</h2>
   <fieldset>
     <CharacterSelect characters={$characters} {currentCharacter} />
     <NinguMultiSelect
