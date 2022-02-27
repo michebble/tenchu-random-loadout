@@ -22,6 +22,7 @@
 </script>
 
 <div>
+  <h2>{$_(`gameTitle.tenchuSan`)}</h2>
   <fieldset>
     <CharacterSelect characters={$characters} {currentCharacter} />
     <NinguMultiSelect

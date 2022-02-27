@@ -39,5 +39,8 @@
   "characterSelect.title": "主人公選択",
   "itemSelect.title": "忍具",
   "weaponSelect.title": "武器",
-  "RandomizeButton": "ランドム"
+  "RandomizeButton": "ランドム",
+  "gameTitle": {
+    "tenchuSan": "天誅参"
+  }
 }
