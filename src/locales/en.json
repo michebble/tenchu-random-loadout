@@ -1,7 +1,8 @@
 {
   "characters": {
     "ayame": "Ayame",
-    "rikimaru": "Rikimaru"
+    "rikimaru": "Rikimaru",
+    "tesshu": "Tesshu"
   },
   "items": {
     "bindingSpell": "Binding Spell",
@@ -34,7 +35,13 @@
     "muramasa": "Muramasa",
     "dokuto": "Dokuto",
     "kasumiAndShizuku": "Kasumi and Shizuku",
-    "grapplingHook": "Grappling Hook"
+    "grapplingHook": "Grappling Hook",
+    "throwingNeedle": "Throwing Needle",
+    "bambooGun": "Bamboo Gun",
+    "disguise": "Disguise",
+    "kumihimo": "Kumihimo",
+    "magazine": "Magazine",
+    "superNeedle": "Super Needle"
   },
   "characterSelect.title": "Charater Select",
   "itemSelect.title": "Items",

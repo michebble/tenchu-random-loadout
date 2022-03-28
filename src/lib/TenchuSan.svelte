@@ -6,6 +6,7 @@
     selectedItems,
     currentCharacter,
     characters,
+    currentReducer,
   } from "./stores/san/store";
 
   import CharacterSelect from "./CharacterSelect.svelte";
@@ -19,27 +20,35 @@
   const persistWeapon = (set) => {
     localStorage.setItem(`${$currentCharacter}WeaponSan`, JSON.stringify(set));
   };
+  const resetSelection = () => ($selectedItems = []);
 </script>
 
 <div>
   <h2>{$_(`gameTitle.tenchuSan`)}</h2>
   <fieldset>
-    <CharacterSelect characters={$characters} {currentCharacter} />
+    <CharacterSelect
+      handleChange={resetSelection}
+      characters={$characters}
+      {currentCharacter}
+    />
     <NinguMultiSelect
       ninguSet={$currentNingu}
       title={$_(`itemSelect.title`)}
       handleChange={persistNingu}
     />
-    <NinguMultiSelect
-      ninguSet={$currentWeaponSet}
-      title={$_(`weaponSelect.title`)}
-      handleChange={persistWeapon}
-    />
+    {#if $currentWeaponSet.length >= 1}
+      <NinguMultiSelect
+        ninguSet={$currentWeaponSet}
+        title={$_(`weaponSelect.title`)}
+        handleChange={persistWeapon}
+      />
+    {/if}
     <div class="button-box">
       <RandomButton
         currentNingu={$currentNingu}
         currentWeaponSet={$currentWeaponSet}
         itemSelection={selectedItems}
+        reducer={$currentReducer}
       />
     </div>
   </fieldset>

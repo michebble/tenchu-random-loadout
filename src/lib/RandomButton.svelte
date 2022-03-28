@@ -1,10 +1,10 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
   import { pickRandom } from "./picks";
-  import { ninjaReducer } from "./reducers";
   export let currentNingu;
   export let currentWeaponSet;
   export let itemSelection;
+  export let reducer;
 
   const MAX_SELECTED_ITEMS = 5;
 
@@ -13,7 +13,7 @@
       .concat(currentNingu)
       .filter((item) => item.enabled);
     $itemSelection = pickRandom(MAX_SELECTED_ITEMS, itemSet)
-      .reduce(ninjaReducer, [])
+      .reduce(reducer, [])
       .filter((e) => e);
   };
 </script>
