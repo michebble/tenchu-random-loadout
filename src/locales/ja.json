@@ -1,7 +1,8 @@
 {
   "characters": {
     "ayame": "彩女",
-    "rikimaru": "力丸"
+    "rikimaru": "力丸",
+    "tesshu": "鉄舟"
   },
   "items": {
     "bindingSpell": "結界の札",
@@ -34,7 +35,13 @@
     "superShuriken": "八方手裏剣",
     "tetsubishi": "鉄菱",
     "tigerTrap": "虎バサミ",
-    "grapplingHook": "鉤縄"
+    "grapplingHook": "鉤縄",
+    "throwingNeedle": "投げ針",
+    "bambooGun": "竹鉄砲",
+    "disguise": "変装道具",
+    "kumihimo": "鋼糸",
+    "magazine": "春画",
+    "superNeedle": "八方針"
   },
   "characterSelect.title": "主人公選択",
   "itemSelect.title": "忍具",

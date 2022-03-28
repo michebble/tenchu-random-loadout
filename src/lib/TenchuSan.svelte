@@ -31,11 +31,13 @@
       title={$_(`itemSelect.title`)}
       handleChange={persistNingu}
     />
-    <NinguMultiSelect
-      ninguSet={$currentWeaponSet}
-      title={$_(`weaponSelect.title`)}
-      handleChange={persistWeapon}
-    />
+    {#if $currentWeaponSet.length >= 1}
+      <NinguMultiSelect
+        ninguSet={$currentWeaponSet}
+        title={$_(`weaponSelect.title`)}
+        handleChange={persistWeapon}
+      />
+    {/if}
     <div class="button-box">
       <RandomButton
         currentNingu={$currentNingu}
