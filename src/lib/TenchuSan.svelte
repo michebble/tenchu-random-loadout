@@ -6,6 +6,7 @@
     selectedItems,
     currentCharacter,
     characters,
+    currentReducer,
   } from "./stores/san/store";
 
   import CharacterSelect from "./CharacterSelect.svelte";
@@ -40,6 +41,7 @@
         currentNingu={$currentNingu}
         currentWeaponSet={$currentWeaponSet}
         itemSelection={selectedItems}
+        reducer={$currentReducer}
       />
     </div>
   </fieldset>

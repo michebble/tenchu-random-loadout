@@ -15,3 +15,17 @@ export const ninjaReducer = (selectedItems, { name, limit }) => {
   const upperLimit = Math.min(...[remaining, limit]);
   return selectedItems.concat({ name, amount: pickAmount(upperLimit) });
 };
+
+export const buildReducer = (max_item_count) => {
+  return (selectedItems, { name, limit }) => {
+    const currentTotal = selectedItems
+      .map((seclectedItem) => seclectedItem.amount)
+      .reduce(sumAmount, 0);
+
+    if (currentTotal >= max_item_count) return selectedItems;
+
+    const remaining = max_item_count - currentTotal;
+    const upperLimit = Math.min(...[remaining, limit]);
+    return selectedItems.concat({ name, amount: pickAmount(upperLimit) });
+  };
+}
