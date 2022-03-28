@@ -2,6 +2,7 @@
   import { _ } from "svelte-i18n";
   export let characters;
   export let currentCharacter;
+  export let handleChange;
 </script>
 
 <div>
@@ -13,6 +14,7 @@
         type="radio"
         name="characters"
         value={character}
+        on:change={(e) => handleChange()}
       />
       <span>{$_(`characters.${character}`)}</span>
     </label>

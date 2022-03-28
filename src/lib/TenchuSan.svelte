@@ -20,12 +20,17 @@
   const persistWeapon = (set) => {
     localStorage.setItem(`${$currentCharacter}WeaponSan`, JSON.stringify(set));
   };
+  const resetSelection = () => ($selectedItems = []);
 </script>
 
 <div>
   <h2>{$_(`gameTitle.tenchuSan`)}</h2>
   <fieldset>
-    <CharacterSelect characters={$characters} {currentCharacter} />
+    <CharacterSelect
+      handleChange={resetSelection}
+      characters={$characters}
+      {currentCharacter}
+    />
     <NinguMultiSelect
       ninguSet={$currentNingu}
       title={$_(`itemSelect.title`)}
